@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="auth" hidden>
+    <div class="auth-box">
+      <h1>CampusOS</h1>
+      <p class="tag">Your campus. Your schedule. Your life. One system.</p>
+      <form data-do="login" id="f-login" class="form">
+        <input name="email" type="email" placeholder="College email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button>Log in</button>
+        <p class="muted">New here? <a href="#" data-do="showRegister">Create an account</a></p>
+      </form>
+      <form data-do="register" id="f-register" class="form" hidden>
+        <input name="name" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="College email" required>
+        <input name="password" type="password" placeholder="Password (6+ characters)" minlength="6" required>
+        <button>Create account</button>
+        <p class="muted">Have an account? <a href="#" data-do="showLogin">Log in</a></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" hidden>
+    <nav id="rail">
+      <div class="brand">CampusOS</div>
+      <button data-view="today">Today</button>
+      <button data-view="subjects">Attendance</button>
+      <button data-view="assignments">Assignments</button>
+      <button data-view="exams">Exam planner</button>
+      <button data-view="expenses">Expenses</button>
+      <button data-view="lostfound">Lost &amp; found</button>
+      <button data-view="market">Marketplace</button>
+      <button data-view="pulse">Campus pulse</button>
+      <button class="logout" data-do="logout">Log out</button>
+    </nav>
+    <main id="view"></main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
